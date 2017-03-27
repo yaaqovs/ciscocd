@@ -1,0 +1,15 @@
+# list running containers 
+2 docker ps 
+3 # list images 
+4 docker images 
+5 # list all containers 
+6 docker ps -a 
+7 # kill everything 
+8 docker rm -f `docker ps -q -a` 
+9 # create an image 
+10 docker build -t yourimagename . 
+11 # inspect container 
+12 docker inspect container_name/container_id 
+13 # run a container 
+14 docker run -it image_name 
+
