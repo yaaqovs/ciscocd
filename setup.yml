@@ -10,3 +10,20 @@
   - git:
      repo: https://github.com/yaaqovs/spring-petclinic.git 
      dest: ~/petclinic
+  - name: install docker
+    become: yes
+    become_method: sudo
+    yum: name=docker state=latest
+  - name: add user ec2-user to group
+    become: yes
+    become_method: sudo
+    user: 
+     name: ec2-user
+     group: docker
+     append: yes 
+  - name: start docker
+    become: yes
+    become_method: sudo
+    service:
+     name: docker
+     state: started 
